@@ -4,9 +4,9 @@ const swaggereJsdoc = require("swagger-jsdoc");
 const options = {
   swaggerDefinition: {
     info: {
-      title: "Test API",
+      title: "Schedule API",
       version: "1.0.0",
-      description: "Test API with express",
+      description: "Schedule API with express",
     },
     host: "localhost:4500",
     basePath: "/",

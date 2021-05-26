@@ -9,6 +9,10 @@ const scheduleSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
+    writeConcern: {
+      j: true,
+      wtimeout: 1000,
+    },
   }
 );
 
@@ -40,8 +44,8 @@ scheduleSchema.statics.updateByTodoid = function (_id, payload) {
 
 // Delete by scheduleId
 scheduleSchema.statics.deleteById = function (_id) {
-  return this.remove({ _id });
+  return this.deleteOne({ _id });
 };
-1;
+
 // Create Model & Export
 module.exports = mongoose.model("Schedule", scheduleSchema);
